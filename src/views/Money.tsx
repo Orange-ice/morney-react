@@ -6,12 +6,6 @@ import {CategorySection} from './Money/CategorySection';
 import {NotesSection} from './Money/NotesSection';
 import {NumberPadSection} from './Money/NumberPadSection';
 
-
-
-
-
-
-
 const MyLayout = styled(Layout)`
   display: flex;
   flex-direction: column;
@@ -19,15 +13,7 @@ const MyLayout = styled(Layout)`
 function Money() {
     return (
         <MyLayout>
-            <TagsSection>
-                <ol>
-                    <li>服饰</li>
-                    <li>餐饮</li>
-                    <li>交通</li>
-                    <li>通讯</li>
-                </ol>
-                <button>添加标签</button>
-            </TagsSection>
+            <TagsSection/>
             <NotesSection>
                 <label>
                     <span>备注</span>
