@@ -1,5 +1,5 @@
 import {useState} from 'react';
-import {createId} from './lib/createId';
+import {createId} from 'lib/createId';
 
 const defaultTags = [
     {id: createId(), name: '服饰'},
@@ -20,15 +20,19 @@ const useTags = () => { // 封装一个自定义 Hook
         }
         return result;
     };
-    const updateTag = (id: number, obj: { name: string }) => {
-        const index = findTagIndex(id);
+    const updateTag = (id: number, {name}: { name: string }) => {
+        setTags(tags.map(tag => tag.id === id ? {id, name: name} : tag));
+        // const index = findTagIndex(id);
         // 深拷贝 tags 得到 tagsClone
-        const tagsClone = JSON.parse(JSON.stringify(tags));
+        // const tagsClone = JSON.parse(JSON.stringify(tags));
         // 把 tagsClone 的第 index 个删掉 ，替换成 {id:id,name:obj.name}
-        tagsClone.splice(index, 1, {id: id, name: obj.name});
-        setTags(tagsClone);
+        // tagsClone.splice(index, 1, {id: id, name: obj.name});
+        // setTags(tagsClone);
     };
-    return {tags, setTags, findTag,updateTag,findTagIndex};
+    const deleteTag = (id: number) => {
+        setTags(tags.filter(tag => tag.id !== id));
+    };
+    return {tags, setTags, findTag, updateTag, findTagIndex,deleteTag};
 };
 export {useTags};
 

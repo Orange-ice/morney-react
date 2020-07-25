@@ -1,4 +1,5 @@
 import React from 'react';
+import cs from 'classnames';
 
 // 引入 icons 文件夹
 const importAll = (requireContext: __WebpackModuleApi.RequireContext) => requireContext.keys().forEach(requireContext);
@@ -8,16 +9,17 @@ try {
     console.log(error);
 }
 
-type Props ={
-    name?:string
-}
+type Props = {
+    name?: string
+} & React.SVGAttributes<SVGElement>
 
-const Icon = (props:Props)=>{
-    return(
-        <svg className="icon">
+const Icon = (props: Props) => {
+    const {name, children,className, ...rest} = props;
+    return (
+        <svg className={cs('icon',className)} {...rest}>
             {props.name && <use xlinkHref={'#' + props.name}/>}
         </svg>
-    )
-}
+    );
+};
 
-export default Icon
+export default Icon;
