@@ -18,7 +18,7 @@ export const useRecords = () => {
     }, []);
     useUpdate(() => {
         window.localStorage.setItem('records', JSON.stringify(records));
-    }, [records]);
+    }, records);
     const addRecord = (newRecord: NewRecordItem) => {
         if (newRecord.amount <= 0) {
             alert('忘记金额啦')
