@@ -8,10 +8,20 @@ const useTags = () => { // 封装一个自定义 Hook
         let localTags = JSON.parse(window.localStorage.getItem('tags') || '[]');
         if (localTags.length === 0) {
             localTags = [
-                {id: createId(), name: '服饰'},
-                {id: createId(), name: '交通'},
-                {id: createId(), name: '通讯'},
                 {id: createId(), name: '餐饮'},
+                {id: createId(), name: '购物'},
+                {id: createId(), name: '日用'},
+                {id: createId(), name: '交通'},
+                {id: createId(), name: '蔬菜'},
+                {id: createId(), name: '水果'},
+                {id: createId(), name: '零食'},
+                {id: createId(), name: '娱乐'},
+                {id: createId(), name: '通讯'},
+                {id: createId(), name: '服饰'},
+                {id: createId(), name: '住房'},
+                {id: createId(), name: '旅行'},
+                {id: createId(), name: '烟酒'},
+                {id: createId(), name: '数码'},
             ];
         }
         setTags(localTags);
