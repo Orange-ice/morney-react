@@ -1,7 +1,7 @@
 import styled from 'styled-components';
-import React, {useState} from 'react';
+import React from 'react';
 import {useTags} from 'hooks/useTags';
-import {createId} from '../../lib/createId';
+
 
 const Wrapper = styled.section`
   background: #ffffff;
