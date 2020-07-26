@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
-npm run bulid &&
+
+npm run build &&
 cd build &&
 git init &&
 git add . &&
